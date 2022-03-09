@@ -1,0 +1,10 @@
+.my-card:hover{
+    background-color: aqua;
+    border-radius: 15px;
+}
+.my-card{
+    background: none;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 2px 1px rgba(159, 159, 161, 0.2);
+}

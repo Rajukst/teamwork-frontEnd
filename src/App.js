@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Header from "./WebPages/Header/Header";
+import Footer from "./WebPages/Header/Footer/Footer";
+import About from "./WebPages/About-Us/About";
+import Success from "./WebPages/Success/Success";
+import Refound from "./WebPages/Refound/Refound";
+import Terms from "./WebPages/TermsAndCondition/Terms";
+import PrivecyPolicy from "./WebPages/PrivecyPolicy/PrivecyPolicy";
+import Home from "./WebPages/HomeSection/MainHome/Home";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header></Header>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/about">
+            <About></About>
+          </Route>
+          <Route path="/success">
+            <Success></Success>
+          </Route>
+          <Route path="/refund">
+            <Refound></Refound>
+          </Route>
+          <Route path="/terms">
+            <Terms></Terms>
+          </Route>
+          <Route path="/privacy">
+            <PrivecyPolicy></PrivecyPolicy>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }
