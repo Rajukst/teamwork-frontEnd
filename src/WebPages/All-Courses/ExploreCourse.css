@@ -1,0 +1,7 @@
+.alignment-class{
+    text-align: justify;
+}
+.my-button{
+    display: flex;
+    align-items: flex-start;
+}

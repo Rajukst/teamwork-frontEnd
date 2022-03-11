@@ -1,52 +1,86 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import coursePic from "../../../Images/course.jpg";
+import img1 from "../../../Images/01.png";
+import img2 from "../../../Images/02.jpg";
+import img3 from "../../../Images/03.jpg";
 import "./HomeCourse.css";
 const HomeCourse = () => {
   return (
     <div>
       <Container>
         <Row>
-          <Col>
-            <Col>
+          <Col xs={12} md={6} lg={6}>
+            <Col xs={12} md={12} lg={12}>
               <h3 className="mt-5">Learn Anything</h3>
               <h1>Benefits About Online Learning Expertise</h1>
               <Card className="my-card mt-2">
-                <Card.Img variant="top" src="holder.js/100px160" />
-                <Card.Body>
-                  <Card.Title>Online Courses</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
-                </Card.Body>
+                <div className="course-div">
+                  <div>
+                    <Card.Img
+                      className="img-fluid p-1"
+                      variant="top"
+                      src={img1}
+                    />
+                  </div>
+                  <div>
+                    <Card.Body>
+                      <Card.Title>Online Courses</Card.Title>
+                      <Card.Text>
+                        This is an Online Course platform. You will get all
+                        necessery thing about this course from here. No extra
+                        time and mone will be charge after purseching this
+                        Course.
+                      </Card.Text>
+                    </Card.Body>
+                  </div>
+                </div>
               </Card>
               <Card className="my-card mt-4">
-                <Card.Img variant="top" src="holder.js/100px160" />
-                <Card.Body>
-                  <Card.Title>Earn A Certificate</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
-                </Card.Body>
+                <div className="course-div">
+                  <div>
+                    <Card.Img
+                      className="img-fluid p-1"
+                      variant="top"
+                      src={img3}
+                    />
+                  </div>
+                  <div>
+                    <Card.Body>
+                      <Card.Title>Earn A Certificate</Card.Title>
+                      <Card.Text>
+                        After completing this Course we will give you an special
+                        certificate. And this certificate will help to get your
+                        job easily.
+                      </Card.Text>
+                    </Card.Body>
+                  </div>
+                </div>
               </Card>
               <Card className="my-card mt-4">
-                <Card.Img variant="top" src="holder.js/100px160" />
-                <Card.Body>
-                  <Card.Title>Learn With Expert</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
-                </Card.Body>
+                <div className="course-div">
+                  <div>
+                    <Card.Img
+                      className="img-fluid p-1"
+                      variant="top"
+                      src={img2}
+                    />
+                  </div>
+                  <div>
+                    <Card.Body>
+                      <Card.Title>Learn With Expert</Card.Title>
+                      <Card.Text>
+                        In this Courses Our Experts are Teaching you very
+                        Sincerely. So if you are a begineer don't worry at all.
+                        Our experts are starting begineeing level.
+                      </Card.Text>
+                    </Card.Body>
+                  </div>
+                </div>
               </Card>
             </Col>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={6}>
             <img
               className="img-fluid my-image"
               src={coursePic}

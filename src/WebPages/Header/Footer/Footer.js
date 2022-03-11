@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import payment from "../../../Images/Payment-Brands.jpg";
 const Footer = () => {
   return (
     <div className="footer">
@@ -21,7 +22,11 @@ const Footer = () => {
             <Link to="/privacy">Privacy Policy</Link>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            3 of 3
+            <img
+              className="img-fluid my-image"
+              src={payment}
+              alt="Girl with Books"
+            />
           </Col>
         </Row>
       </Container>

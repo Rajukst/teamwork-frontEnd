@@ -7,10 +7,10 @@ const InTouch = () => {
       <h1>Get in Touch</h1>
       <Container>
         <Row>
-          <Col>
+          <Col xs={12} md={6} lg={6}>
             <h2>Newsletter - Stay tune and get the latest update</h2>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={6}>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>

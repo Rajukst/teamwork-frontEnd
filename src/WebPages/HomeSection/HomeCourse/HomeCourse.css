@@ -8,3 +8,8 @@
     background-color: rgb(245, 245, 245);
     box-shadow: 2px 2px 2px 1px rgba(159, 159, 161, 0.2);
 }
+.course-div{
+    display: flex;
+    text-align: justify;
+    width: 100%;
+}

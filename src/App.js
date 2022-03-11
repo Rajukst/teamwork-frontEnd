@@ -10,37 +10,56 @@ import Refound from "./WebPages/Refound/Refound";
 import Terms from "./WebPages/TermsAndCondition/Terms";
 import PrivecyPolicy from "./WebPages/PrivecyPolicy/PrivecyPolicy";
 import Home from "./WebPages/HomeSection/MainHome/Home";
+import AllCourses from "./WebPages/All-Courses/AllCourses";
+import AddCourse from "./WebPages/Admin/Add-Course/AddCourse";
+import AuthProvider from "./Context/AuthProvider";
+import SingleCourse from "./WebPages/All-Courses/SingleCourse/SingleCourse";
+import Login from "./WebPages/Login/Login";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/about">
-            <About></About>
-          </Route>
-          <Route path="/success">
-            <Success></Success>
-          </Route>
-          <Route path="/refund">
-            <Refound></Refound>
-          </Route>
-          <Route path="/terms">
-            <Terms></Terms>
-          </Route>
-          <Route path="/privacy">
-            <PrivecyPolicy></PrivecyPolicy>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/course">
+              <AllCourses></AllCourses>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/place-order/:serviceId">
+              <SingleCourse></SingleCourse>
+            </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+            <Route path="/success">
+              <Success></Success>
+            </Route>
+            <Route path="/refund">
+              <Refound></Refound>
+            </Route>
+            <Route path="/terms">
+              <Terms></Terms>
+            </Route>
+            <Route path="/privacy">
+              <PrivecyPolicy></PrivecyPolicy>
+            </Route>
+            <Route path="/add-course">
+              <AddCourse></AddCourse>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

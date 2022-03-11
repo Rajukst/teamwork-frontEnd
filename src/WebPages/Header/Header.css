@@ -1,0 +1,12 @@
+.my-header a {
+    text-decoration: none;
+    color: aqua;
+}
+.header-scroll{
+    font-size: 20px;
+}
+.my-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

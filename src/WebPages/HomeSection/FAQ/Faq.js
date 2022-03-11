@@ -8,54 +8,43 @@ const Faq = () => {
       <h1>Frequently Asked Question</h1>
       <Container>
         <Row>
-          <Col>
+          <Col xs={12} md={6} lg={6}>
             <img
               className="img-fluid faq-image"
               src={faq}
               alt="Girl with Books"
             />
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={6}>
             <Accordion>
               <Accordion.Item eventKey="0" className="mt-5 my-accordion">
                 <Accordion.Header className="">
-                  Accordion Item #1
+                  How This Course Will Run
                 </Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  This Course Will Run Daily. EveryDay at 9.00 PM Class Video
+                  will uploaded by admin. You have to finish this module the end
+                  of the day. Don't use shortcurt way to finish it. Just relax
+                  and learn.
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="1" className="mt-4">
-                <Accordion.Header>Accordion Item #2</Accordion.Header>
+                <Accordion.Header>Is This Course Free?</Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  This Course Is not free, Because We provide a lot of expert
+                  lecturer, and we have to pay them. And also we have a huge
+                  amount of support instructor who always guide you. In this
+                  case we do not considure this course free.
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="2" className="mt-4">
-                <Accordion.Header>Accordion Item #2</Accordion.Header>
+                <Accordion.Header>
+                  How Many Leassons Are There?
+                </Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  The Leasons are particular on course base. But we try our best
+                  for fullfill your Job criteria in this course. So don't worry
+                  about it. Juast Learn.
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
