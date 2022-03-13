@@ -22,7 +22,9 @@ const ExploreCourse = ({ myCourse }) => {
           </Card.Body>
           <div className="my-button">
             <Link to={`/place-order/${_id}`}>
-              <Button variant="outline-dark">Purchase Now</Button>
+              <Button className="mb-2 ms-3" variant="outline-dark">
+                Purchase Now
+              </Button>
             </Link>
           </div>
         </Card>

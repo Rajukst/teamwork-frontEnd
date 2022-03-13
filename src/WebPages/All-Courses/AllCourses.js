@@ -5,7 +5,7 @@ import ExploreCourse from "./ExploreCourse";
 const AllCourses = () => {
   const [course, setCourse] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/online-course")
+    fetch("https://guarded-citadel-56514.herokuapp.com/online-course")
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, []);

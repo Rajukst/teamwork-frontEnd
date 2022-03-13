@@ -14,7 +14,7 @@ const AddCourse = () => {
     const description = addText.current.value;
     const totalAdd = { name, price, image, description };
     console.log(totalAdd);
-    fetch("http://localhost:5000/add-course", {
+    fetch("https://guarded-citadel-56514.herokuapp.com/add-course", {
       method: "POST",
       headers: {
         "content-type": "application/json",

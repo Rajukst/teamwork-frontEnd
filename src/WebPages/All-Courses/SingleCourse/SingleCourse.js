@@ -7,7 +7,9 @@ const SingleCourse = () => {
   const { serviceId } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/place-order/${serviceId}`)
+    fetch(
+      `https://guarded-citadel-56514.herokuapp.com/place-order/${serviceId}`
+    )
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -20,7 +22,7 @@ const SingleCourse = () => {
   const onSubmit = (data) => {
     data.status = "pending";
     console.log(data);
-    fetch("http://localhost:5000/confirmOrder", {
+    fetch("https://guarded-citadel-56514.herokuapp.com/confirmOrder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

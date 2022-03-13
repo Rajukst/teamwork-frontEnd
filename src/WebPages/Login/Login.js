@@ -3,7 +3,7 @@ import { Button, Grid } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-
+import "./Login.css";
 const Login = () => {
   const [loginUser, setLoginUser] = useState({});
   const { user, signInUser, loading, error } = useAuth();
@@ -21,7 +21,7 @@ const Login = () => {
     setLoginUser(newData);
   };
   return (
-    <div>
+    <div className="login-div">
       <h1>This is login form</h1>
       <form onSubmit={loginSubmit}>
         <input
