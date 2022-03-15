@@ -15,6 +15,8 @@ import AddCourse from "./WebPages/Admin/Add-Course/AddCourse";
 import AuthProvider from "./Context/AuthProvider";
 import SingleCourse from "./WebPages/All-Courses/SingleCourse/SingleCourse";
 import Login from "./WebPages/Login/Login";
+import Register from "./WebPages/Register/Register";
+import Dashboard from "./WebPages/Dashboard/Dashboard-Main/Dashboard";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
             </Route>
             <Route path="/place-order/:serviceId">
               <SingleCourse></SingleCourse>

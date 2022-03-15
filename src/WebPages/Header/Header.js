@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
@@ -31,9 +31,15 @@ const Header = () => {
             <Link className="ms-4" to="/add-course">
               Add Course
             </Link>
+            <Link className="ms-4" to="/dashboard">
+              Dashboard
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Link to="/login">
+        <Button className="me-3">Login</Button>
+      </Link>
     </Navbar>
   );
 };
