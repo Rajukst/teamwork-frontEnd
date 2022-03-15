@@ -11,7 +11,6 @@ import Terms from "./WebPages/TermsAndCondition/Terms";
 import PrivecyPolicy from "./WebPages/PrivecyPolicy/PrivecyPolicy";
 import Home from "./WebPages/HomeSection/MainHome/Home";
 import AllCourses from "./WebPages/All-Courses/AllCourses";
-import AddCourse from "./WebPages/Admin/Add-Course/AddCourse";
 import AuthProvider from "./Context/AuthProvider";
 import SingleCourse from "./WebPages/All-Courses/SingleCourse/SingleCourse";
 import Login from "./WebPages/Login/Login";
@@ -60,9 +59,6 @@ function App() {
             </Route>
             <Route path="/privacy">
               <PrivecyPolicy></PrivecyPolicy>
-            </Route>
-            <Route path="/add-course">
-              <AddCourse></AddCourse>
             </Route>
           </Switch>
           <Footer></Footer>

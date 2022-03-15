@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { Button } from "react-bootstrap";
-
+import Swal from "sweetalert2";
+import "./AddCourse.css";
 const AddCourse = () => {
   const addName = useRef();
   const addPrice = useRef();
@@ -14,7 +14,7 @@ const AddCourse = () => {
     const description = addText.current.value;
     const totalAdd = { name, price, image, description };
     console.log(totalAdd);
-    fetch("https://guarded-citadel-56514.herokuapp.com/add-course", {
+    fetch("http://localhost:5000/add-course", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -24,24 +24,28 @@ const AddCourse = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("Course Added");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           e.target.reset();
         }
-        console.log(data);
       });
   };
   return (
-    <div>
-      <h1>Add Your Course Here</h1>
-      <div className="addProduct-image">
-        <h1 className="pt-5"> Add Product</h1>
+    <div className="add-course">
+      <div>
+        <h1>Add Your Course Here</h1>
         <form onSubmit={handleOnSubmit}>
           <input
             type="text"
             name=""
             id=""
             ref={addName}
-            placeholder="Product Name"
+            placeholder="Course Name"
             required
           />
           <br />
@@ -51,8 +55,7 @@ const AddCourse = () => {
             name=""
             id=""
             ref={addPrice}
-            placeholder="Product Price"
-            required
+            placeholder=" Price"
           />
           <br />
           <br />
@@ -61,24 +64,21 @@ const AddCourse = () => {
             name=""
             id=""
             ref={addImage}
-            placeholder="Product Image or Url"
-            required
+            placeholder="Course Image Url"
           />
           <br />
           <br />
           <textarea
-            placeholder="Short Description"
             id=""
             ref={addText}
+            placeholder="short Description"
             name=""
             rows=""
             cols=""
           ></textarea>
           <br />
           <br />
-          <Button type="submit" variant="outline-info">
-            Add Product
-          </Button>
+          <input id="submit-buttn1" type="submit" value="Add Course" />
         </form>
       </div>
     </div>

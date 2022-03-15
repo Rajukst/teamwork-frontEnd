@@ -19,18 +19,6 @@ const Header = () => {
             <Link className="ms-4" to="/course">
               All Courses
             </Link>
-            <Link className="ms-4" to="/about">
-              About
-            </Link>
-            <Link className="ms-4" to="/blog">
-              Blogs
-            </Link>
-            <Link className="ms-4" to="/contact">
-              Contact
-            </Link>
-            <Link className="ms-4" to="/add-course">
-              Add Course
-            </Link>
             <Link className="ms-4" to="/dashboard">
               Dashboard
             </Link>
