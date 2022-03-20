@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SingleCourse = () => {
   const { serviceId } = useParams();
@@ -22,13 +23,25 @@ const SingleCourse = () => {
   const onSubmit = (data) => {
     data.status = "pending";
     console.log(data);
-    fetch("https://guarded-citadel-56514.herokuapp.com/confirmOrder", {
+    fetch("http://localhost:5000/confirmOrder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Course Purchase Successfull",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
+          setProduct(data);
+        }
+      });
   };
   return (
     <div>
@@ -47,6 +60,7 @@ const SingleCourse = () => {
                 {...register("name")}
                 defaultValue={product?.name}
                 className="p-2 m-2 w-100"
+                required
               />
               <br />
               <input
@@ -54,12 +68,14 @@ const SingleCourse = () => {
                 // placeholder="Name"
                 type="date"
                 className="p-2 m-2 w-100"
+                required
               />
               <br />
               <input
                 {...register("address")}
                 placeholder="address"
                 className="p-2 m-2 w-100"
+                required
               />
               <br />
 
@@ -67,12 +83,14 @@ const SingleCourse = () => {
                 {...register("price", { required: true })}
                 defaultValue={product?.price}
                 className="p-2 m-2 w-100"
+                required
               />
               <br />
               <input
                 {...register("image", { required: true })}
                 defaultValue={product?.image}
                 className="p-2 m-2 w-100"
+                required
               />
               <br />
               <br />

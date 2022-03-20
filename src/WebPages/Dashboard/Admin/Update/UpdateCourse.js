@@ -1,61 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 const UpdateCourse = () => {
-  const [update, setUpdate] = useState([]);
+  const { updateId } = useParams();
+  const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/online-course")
+    fetch(`http://localhost:5000/update-course/${updateId}`)
       .then((res) => res.json())
-      .then((data) => setUpdate(data));
+      .then((data) => console.log(data));
   }, []);
-  const handleUpdate = (id) => {
-    const proceed = window.confirm("are you sure to update your Course?");
-    if (proceed) {
-      const url = `http://localhost:5000/online-course/${id}`;
-      fetch(url, {
-        method: "UPDATE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
-    }
-  };
   return (
     <div>
       <h1>This is Update Course</h1>
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>Product Id</th>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Short Description</th>
-            <th>Actions</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {update.map((myRow) => (
-            <tr>
-              <td>{myRow._id}</td>
-              <td>{myRow.name}</td>
-              <td>{myRow.price}</td>
-              <td>{myRow.description}</td>
-              <td></td>
-              <td>
-                <Button
-                  onClick={() => handleUpdate(myRow._id)}
-                  className="my-button"
-                  variant="warning"
-                >
-                  Update
-                </Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      <Container>
+        <Row>
+          <Col xs={12} md={5} lg={5}>
+            <img className="img-fluid" src={product.image} alt="" />
+            <h1> Total Price: {product.price}</h1>
+            <h4>Product Description: {product.description} </h4>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

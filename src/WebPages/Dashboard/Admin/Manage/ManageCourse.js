@@ -57,13 +57,11 @@ const ManageCourse = () => {
                 <td>{myRow.name}</td>
                 <td>{myRow.price}</td>
                 <td>{myRow.description}</td>
-                <td>
-                  <Link to={`/update-course/${myRow._id}`}>
-                    <Button className="my-button" variant="warning">
-                      Update
-                    </Button>
-                  </Link>
-                </td>
+                <Link to={`/update-course/${myRow._id}`}>
+                  <Button className="my-button" variant="warning">
+                    Update
+                  </Button>
+                </Link>
                 <td>
                   <Button
                     onClick={() => handleDeleteUser(myRow._id)}

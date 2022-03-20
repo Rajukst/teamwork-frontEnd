@@ -16,6 +16,8 @@ import SingleCourse from "./WebPages/All-Courses/SingleCourse/SingleCourse";
 import Login from "./WebPages/Login/Login";
 import Register from "./WebPages/Register/Register";
 import Dashboard from "./WebPages/Dashboard/Dashboard-Main/Dashboard";
+import UpdateCourse from "./WebPages/Dashboard/Admin/Update/UpdateCourse";
+import Unique from "./WebPages/Dashboard/User/MyCourse/Unique";
 
 function App() {
   return (
@@ -44,6 +46,9 @@ function App() {
             </Route>
             <Route path="/place-order/:serviceId">
               <SingleCourse></SingleCourse>
+            </Route>
+            <Route path="/unique-course/:uniqueId">
+              <Unique></Unique>
             </Route>
             <Route path="/about">
               <About></About>

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import AddCourse from "../Admin/Add-Course/AddCourse";
 import ManageCourse from "../Admin/Manage/ManageCourse";
 import UpdateCourse from "../Admin/Update/UpdateCourse";
+import MyCourse from "../User/MyCourse/MyCourse";
 import "./Dashboard.css";
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
@@ -15,6 +16,11 @@ const Dashboard = () => {
       <Container fluid>
         <Row>
           <Col xs={12} md={2} lg={2}>
+            <Link className="remove" to={`${url}/my-course`}>
+              <Button className="mt-4 my-button" color="inherit">
+                My Course
+              </Button>
+            </Link>
             <Link className="remove" to={`${url}/add-course`}>
               <Button className="mt-4 my-button" color="inherit">
                 Add Course
@@ -39,8 +45,8 @@ const Dashboard = () => {
               <Route path={`${path}/manage`}>
                 <ManageCourse></ManageCourse>
               </Route>
-              <Route path={`${path}/update`}>
-                <UpdateCourse></UpdateCourse>
+              <Route path={`${path}/my-course`}>
+                <MyCourse></MyCourse>
               </Route>
             </Switch>
           </Col>
